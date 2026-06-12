@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  display: flex;
+  align-items: start;
+  margin-top: 50px;
+  justify-content: center;
+  height: 100vh;
+}
+
+.accordion-container {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 30px;
+  border-radius: 5px;
+  gap: 5px;
+}
+
+.header-acc p {
+  padding: 10px 0;
+}
+
+.accordions {
+  display: flex;
+  flex-direction: column;
+  /* gap: 5px; */
+}
+
+.accordions-titles {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.icon-down-open-big {
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.icon-down-open-big.hover {
+  transform: rotate(-180deg);
+}
+
+.content > p {
+  padding: 10px;
+  border: 1px solid black;
+  line-height: 18px;
+  border-radius: 8px;
+  margin: 0;
+  transform: translateY(-20px);
+  opacity: 0;
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease;
+}
+
+.content.open {
+  max-height: 600px;
+}
+
+.content.open > p {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 425px) {
+  .home {
+    margin: 50px 5px;
+  }
+
+  .accordion-container {
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 5px;
+  }
+}
